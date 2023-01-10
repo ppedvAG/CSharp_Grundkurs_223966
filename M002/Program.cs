@@ -139,7 +139,7 @@
 			Console.WriteLine(8 / 5); //Int-Division, da zwei Ints als Argumente (Ergebnis 1 statt 1.6)
 			Console.WriteLine(8.0 / 5); //Kommadivision erzwingen, wenn eine der beiden Zahlen eine Kommazahl ist
 			Console.WriteLine(8d / 5);
-			Console.WriteLine(8f / 5);
+			Console.WriteLine(8f / 5); 
 			Console.WriteLine((double) z1 / z2); //Eine der beiden Variablen zu double konvertieren per Cast
 			#endregion
 		}
