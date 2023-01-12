@@ -73,10 +73,28 @@ internal class Program
 
 		Lebewesen l4 = mensch2;
 		l4.WasBinIch(); //Ich bin ein Lebewesen
-		//Hier wird die Methode von Lebewesen verwendet, da die Verbindung getrennt wurde
+						//Hier wird die Methode von Lebewesen verwendet, da die Verbindung getrennt wurde
 		#endregion
 
+		Lebewesen[] array = new Lebewesen[3];
+		array[0] = new Mensch("", 1);
+		array[1] = new Katze("");
+		array[2] = new Mensch("", 123);
 
+		foreach (Lebewesen lw in array)
+		{
+			if (lw.GetType() == typeof(Mensch))
+			{
+				Mensch cast = (Mensch) lw;
+				cast.MenschMethode();
+			}
+
+			if (lw is Katze k)
+			{
+				//Katze k = (Katze) lw; kann gespart werden, da Variablendeklaration und Cast in der if
+				k.KatzeMethode();
+			}
+		}
 	}
 }
 
@@ -127,6 +145,11 @@ public class Mensch : Lebewesen //Mensch ist ein Lebewesen (Vererbung herstellen
 	{
 		Console.WriteLine("Der Mensch bewegt sich");
 	}
+
+	public void MenschMethode()
+	{
+
+	}
 }
 
 public class Katze : Lebewesen
@@ -139,4 +162,9 @@ public class Katze : Lebewesen
 	{
 		Console.WriteLine("Die Katze bewegt sich");
 	}
+
+	public void KatzeMethode()
+	{
+
+	}		
 }
